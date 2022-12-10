@@ -1,0 +1,39 @@
+import math
+# prüfe Primzahl
+
+
+def ist_Prim(num):
+    ist_primzahl = True
+
+    if num > 1:
+
+        for teiler in range(2, num):
+
+            if num % teiler == 0:
+                ist_primzahl = False
+
+    else:
+        print("Die zahl muss > 1 sein!")
+
+    return ist_primzahl
+
+# Quadratische Gleichungen
+
+
+a = int(input("a = "))
+b = int(input("b = "))
+c = int(input("c = "))
+
+D = b**2 - 4*a*c
+if D > 0:
+    x1 = (-b + math.sqrt(D))/2.0*a
+
+    x2 = (-b - math.sqrt(D))/2.0*a
+elif D == 0:
+    x1 = (-b)/(2*a)
+    x2 = (-b)/(2*a)
+else:
+    print("Die Lösung ist komplex")
+
+print("x1 =", x1)
+print("x2 =", x2)

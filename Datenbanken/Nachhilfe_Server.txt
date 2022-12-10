@@ -1,0 +1,7 @@
+DB_URL = 'mongodb+srv://cluster0.spdqnnv.mongodb.net/'
+DB_USER = 'Nachhilfe'
+DB_PASSWORT = '12345Abcd'
+
+client = MongoClient(DB_URL, username = DB_USER
+                     , password = 
+                     DB_PASSWORT)
