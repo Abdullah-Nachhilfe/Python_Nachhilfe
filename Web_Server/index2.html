@@ -1,0 +1,72 @@
+<title>Pfad vs. Query</title>
+
+<link rel="stylesheet" href="MyStyleSheet.css">
+
+<body>
+    <h1>Web-Server</h1>
+    <h2>Pfad vs. Query</h2>
+    <ul>
+        <li>Pfad:
+            <ul>
+                <li>einzelne String-Werte</li>
+                <li>Reihenfolge spielt eine Rolle</li>
+            </ul>
+        </li>
+        <li>Query:
+            <ul>
+                <li>Key/Value Paare, wie ein <strong><em>Dictionary</em></strong> </li>
+                <li>Reihenfolge ist egal</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Es gibt Situationen, wo man Formular-Daten <em>NICHT!</em> an die URL zu hängen, z.B.:</p>
+    <ul>
+        <li>
+            Daten wie ein <strong>Passwort</strong> 
+        </li>
+    </ul>
+    <p>Es gibt mehrer Methon zur Kommunikation mit dem Server über das HTTP-Protokol. Bis jetzt haben wir die <strong>Get-Methode</strong> verwendet.</p>
+    <p>Eine andere Methode ist die <strong>Post-Methode</strong></p>
+
+    <h2>Post vs. Get</h2>
+    <ul>
+        <li>Get-Request:
+            <ul>
+                <li>
+                    Ziel: einfacher Anruf einer Resource
+                </li>
+                <li>
+                    Wenn wir einen Browser öffnen und etwas eingeben, erfolgt eine Get-Request (Abfrage).
+                </li>
+                <li>
+                    Formular-Daten sind Teil der URL
+                </li>
+            </ul>
+        </li>
+        <li>POST-Request (Abfrage):
+            <ul>
+                <li>Ziel: Senden an Daten an den Server (Geht auch mit Get-Methode) aber hier ist es das Main-Goal</li>
+                <li>Ist nicht dierekt im Browser (über URL) veränderbar. Wie wir es manchmal mit Query gemacht haben.</li>
+                <li>
+                    Mit POST-Requests sind die <strong>Formular-Daten NICHT! Teil der URL</strong> 
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h2>How-To?</h2>
+    <p>Wir haben bis jetzt die Get-Methode verwendet. Also  <em>GET ist Dafualt</em></p>
+    <p>
+        How-To Post-Methode statt GET verwenden ?
+    </p>
+    <ol>
+        <li>
+            Das erfolgt im Web-Formular.
+        </li>
+        <li>
+            Web-Server so programmieren, damit der Server POST-Requests empfangen und verarbeiten kann.
+        </li>
+        <li>
+            Formular-Daten über einen anderen Weg abrufen, also nicht mit <code>request.args...</code>
+        </li>
+    </ol>
+</body>
