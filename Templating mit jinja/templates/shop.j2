@@ -1,0 +1,16 @@
+<title>Mein Shop</title>
+<h2>Herzlich Willkommen</h2>
+
+
+<ol>
+
+{% for ware in ware_template%}
+
+    <li> 
+        <strong>{{ ware }}</strong> ({{ware_template[ware]}}) 
+    </li>
+    
+{% endfor %}
+
+
+</ol>

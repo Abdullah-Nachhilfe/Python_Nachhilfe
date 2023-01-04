@@ -1,34 +1,42 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-# 1. Start Seite hat Mehrere Web-Formulare zum Rechnen
-# 2. Verabrebeiten
-# 3. Darstellen
+# Templating mit Jinja:
+# Warum Templating?
+# Was ist templating?
+# Wie arbeiten mit Jinja?
+
+# Einfaches Beispiel:
+
+# 1. python von HTML trennen
+# 2 zusammen bringen, wo wir brauchen
+
 
 @app.route('/')
 def index():
-    
-    return '''<h1>Herzlich Willkommen zu diesem sehr guten Rechner</h1>
-            Pound to kg
-            <form action="/lb_to_kg">
-            <input type="text" name="lb">
-            <input type="submit" value = "rechne">
-            </form>
-            Kelvin to Celsius
-            <form action="/K_to_C">
-            <input type="text" name="K">
-            <input type="submit" value = "rechne">
-            </form>'''
+
+    return render_template('index.j2')
+
+
+@app.route('/rechner')
+def rechner():
+
+    return render_template('rechner.j2')
+
 
 @app.route('/lb_to_kg')
 def lb_to_kg():
+    
     if 'lb' in request.args:
         lb = float(request.args['lb'])
-        kg = lb/2.2046
-        return '%slb = %skg' % (lb, kg)
+        kg = lb / 2.205
+        return render_template('lb_to_kg.j2',
+                               g_kg = kg, g_lb = lb)
+
     else:
         return 'Etwas ist schiefgelaufen'
+
 
 @app.route('/K_to_C')
 def K_to_C():
@@ -36,9 +44,10 @@ def K_to_C():
         K = float(request.args['K'])
         C = K - 273.15
         
-        return '%sK = %.2f°C' % (K,C)
+        return render_template('K_to_C.j2', K = K, C = C)
+    
     else:
         return 'Etwas ist schiefgelaufen'
-    
+
 if __name__ == '__main__':
     app.run()
