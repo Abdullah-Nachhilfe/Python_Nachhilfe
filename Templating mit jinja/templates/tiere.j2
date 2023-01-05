@@ -1,0 +1,19 @@
+<body>
+
+<h3>Tier Liste</h3>
+
+<p>
+
+{% for tier in tiere_dict%}
+
+<ul>
+
+    <li>{{ tier }} auf Deutch = {{ tiere_dict[tier] }}</li>
+
+</ul>
+
+{% endfor %}
+
+</p>
+
+</body>
