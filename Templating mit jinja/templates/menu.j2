@@ -1,0 +1,24 @@
+<body>
+
+<h1>Getränke</h1>
+
+<ol>
+
+    {%for getraenk in items %}
+
+    <li> 
+
+        <a href = 'getraenke' > {{getraenk['bezeichnung']}} </a>
+        <strong>{{getraenk['preis'] }}</strong>
+    </li>
+
+    {%endfor%}
+
+
+</ol>
+
+
+
+
+
+</body>

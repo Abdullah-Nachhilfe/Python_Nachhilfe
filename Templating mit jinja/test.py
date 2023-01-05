@@ -13,3 +13,9 @@ for getränk in getränke:
     print(ausgabe)
     
 
+
+
+name = 'hilfe'
+vorname = 'Nach'
+
+print(vorname + name)

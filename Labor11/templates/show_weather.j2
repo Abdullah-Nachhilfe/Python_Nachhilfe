@@ -1,0 +1,13 @@
+<h3>Das Wetter</h3>
+
+<body>
+
+<ul>
+    {%for key in wetter %}
+    <li>
+        {{key}}: {{wetter[key]}}
+    </li>
+    {%endfor%}
+    
+</ul>
+</body>
